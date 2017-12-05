@@ -1,0 +1,28 @@
+{
+  "name": "let-s-have-fun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js",
+    "start": "node src/server.js",
+      "start:server": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facg3/Let-s-Have-Fun.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/facg3/Let-s-Have-Fun/issues"
+  },
+  "homepage": "https://github.com/facg3/Let-s-Have-Fun#readme",
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "nodemon": "^1.12.4"
+  },
+  "dependencies": {}
+}
