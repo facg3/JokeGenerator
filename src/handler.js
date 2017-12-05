@@ -1,37 +1,33 @@
-const http = require('http');
+const request = require('request');
 
-const homepage = () => {
-  http.get('http://jsonplaceholder.typicode.com/users/1', (res) => {
-    const { statusCode } = res;
+const option = {
+  url: '',
+  headers: {
+    'User-Agent': 'request',
+  },
+};
+const homepage = (req, res) => {
+request(option, (err, result, body) => {
 
-    const contentType = res.headers['content-type'];
-    let error;
-    if (statusCode !== 200) {
-      error = new Error('Request Failed.\n' +
-                      `Status Code: ${statusCode}`);
-    } else if (!/^application\/json/.test(contentType)) {
-      error = new Error('Invalid content-type.\n' +
-                      `Expected application/json but received ${contentType}`);
+    if (err) { return console.log(err); }
+    if (result.statusCode === 200) {
+      res.end(body);
     }
-    if (error) {
-      console.error(error.message);
-      res.resume();
-      return;
-    }
-
-    res.setEncoding('utf8');
-    let rawData = '';
-    res.on('data', (chunk) => { rawData += chunk; });
-    res.on('end', () => {
-      try {
-        const parsedData = JSON.parse(rawData);
-        console.log(parsedData);
-      } catch (e) {
-        console.error(e.message);
-      }
-    });
-  }).on('error', (e) => {
-    console.error(`Got error: ${e.message}`);
   });
 };
+
+const getRandomJoke = (callback, user) => {
+  return request('https://icanhazdadjoke.com/slack', (error, response) => {
+    if (error) {
+      console.log('Error:', error)
+    } else {
+      let jokeJSON = JSON.parse(response.body)
+      let joke = jokeJSON.attachments[0].text
+      console.log(joke);
+
+    }
+  })
+}
+
+getRandomJoke()
 module.exports = homepage;
