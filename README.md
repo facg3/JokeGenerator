@@ -1,4 +1,4 @@
-#Jokes Generator
+# Jokes Generator
 ##### This is the cure for your depression without a doubt. This life is so stressful, full of bullies and sometimes unbearable! Thus, we decided to make this app to save lives :)
 
 ## Who are we:
@@ -22,4 +22,4 @@
 
 #### Briefly, the server launches, sends requests to the APIs, makes a connection and waits for other requests from the user in the front-end. Once done, the server with the help of the handlers will send a request, and receive a response (which is a random joke + random funny image) and will display it to the user. Cool, right?
 
-##### Feel free to view our app using github pages or heroku. 
+##### Feel free to view our app using github pages or heroku.
