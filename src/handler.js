@@ -1,7 +1,9 @@
+
 const req = require('request');
 const fs = require('fs');
 const path = require('path');
 const querystring = require('querystring');
+
 
 const homepage = (request, response) =>{
   fs.readFile(path.join(__dirname, "..","public", "index.html"), (err, file)=>{
@@ -45,7 +47,9 @@ const getRandomJoke = (request, response) => {
     } else {
       const jokeJSON = JSON.parse(apiResponse.body);
       const joke = jokeJSON.attachments[0].text;
+
       response.end(joke);
+
     }
   });
 };
@@ -54,5 +58,7 @@ const getRandomJoke = (request, response) => {
   module.exports = {
     homepage,
     handler,
+
     getRandomJoke
+
     }
