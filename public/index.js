@@ -1,3 +1,5 @@
+
+
 var loading = function(e) {
   e.preventDefault();
   e.stopPropagation();
@@ -22,6 +24,8 @@ function getjoke(){
     if (xhr.status === 200) {
       var response = (xhr.responseText);
       document.getElementById("rjoke").innerHTML = response;
+      var pic = `https://api.adorable.io/avatars/285/${Math.floor((Math.random() * 100) + 1)}.png`;
+      document.getElementById("face").src = pic;
     } else {
       console.log('Status Code: ' + xhr.status);
     }
