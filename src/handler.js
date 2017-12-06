@@ -1,4 +1,5 @@
-const request = require('request');
+
+const req = require('request');
 const fs = require('fs');
 const path = require('path');
 const querystring = require('querystring');
@@ -18,7 +19,6 @@ const homepage = (request, response) =>{
 }
 
 const handler = (request, response) => {
-
   const url = request.url;
   const extension = url.split(".")[1];
   const filetype = {
@@ -40,17 +40,16 @@ const handler = (request, response) => {
   });
   }
 
-
-
-
-const getRandomJoke = (callback, user) => {
-  return request('https://icanhazdadjoke.com/slack', (error, response) => {
+const getRandomJoke = (request, response) => {
+  return req('https://icanhazdadjoke.com/slack', (error, apiResponse) => {
     if (error) {
       console.log('Error:', error);
     } else {
-      const jokeJSON = JSON.parse(response.body);
+      const jokeJSON = JSON.parse(apiResponse.body);
       const joke = jokeJSON.attachments[0].text;
-      response.end(joke)
+
+      response.end(joke);
+
     }
   });
 };
@@ -59,5 +58,7 @@ const getRandomJoke = (callback, user) => {
   module.exports = {
     homepage,
     handler,
-    getGame
+
+    getRandomJoke
+
     }

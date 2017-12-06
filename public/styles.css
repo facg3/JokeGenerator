@@ -26,6 +26,11 @@ html, body {
 	font-family: "Aclonica";
 	border-radius: 50%;
 }
+.face{
+	border-radius: 100px;
+	width: 150px;
+	height: 100px;
+}
 .test {
   background-position: 0px 0px;
   width: 100%;
