@@ -24,6 +24,11 @@ html, body {
   padding: 0px;
   text-align: center;
 }
+.face{
+	border-radius: 100px;
+	width: 150px;
+	height: 100px;
+}
 .test {
   background-position: 0px 0px;
   width: 100%;
