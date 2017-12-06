@@ -1,18 +1,14 @@
 const handlers = require('./handler.js');
 
 const router = (request, response) => {
-  const url = request.url;
+  const { url } = request;
   if (url === '/') {
     handlers.homepage(request, response);
-  }
-  else if (url.startsWith("/public")){
+  } else if (url.startsWith('/public')) {
     handlers.handler(request, response);
-  }
-  else if (url === '/getjoke') {
+  } else if (url === '/getjoke') {
     handlers.getRandomJoke(request, response);
-   }
-
-  else {
+  } else {
     response.writeHead(404);
     response.end('PAGE NOT FOUND!!!!!!!!!!');
   }
