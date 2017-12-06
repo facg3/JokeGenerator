@@ -23,6 +23,8 @@ html, body {
   margin: 0px;
   padding: 0px;
   text-align: center;
+	font-family: "Aclonica";
+	border-radius: 50%;
 }
 .test {
   background-position: 0px 0px;
@@ -133,7 +135,7 @@ div {
 }
 
 .quote-box {
-  border-radius:3px;
+  border-radius:50%;
   position:relative;
   margin:8% auto auto auto;
   width:450px;
@@ -153,7 +155,7 @@ div {
   }
 body .test .quote-box .face{
     border: 7px solid #555;
-    border-radius: 70%;
+    border-radius: 50%;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     width: 400px;
