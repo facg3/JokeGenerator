@@ -2,23 +2,23 @@ var loading = function(e) {
   e.preventDefault();
   e.stopPropagation();
   e.target.classList.add('loading');
-  e.target.setAttribute('disabled','disabled');
-  setTimeout(function(){
+  e.target.setAttribute('disabled', 'disabled');
+  setTimeout(function() {
     e.target.classList.remove('loading');
     e.target.removeAttribute('disabled');
-  },1500);
+  }, 1500);
 };
 
 var btns = document.querySelectorAll('button');
-for (var i=btns.length-1;i>=0;i--) {
-  btns[i].addEventListener('click',loading);
+for (var i = btns.length - 1; i >= 0; i--) {
+  btns[i].addEventListener('click', loading);
 }
 // document.getElementById("joke").addEventListener('click',getjoke);
 
-function getjoke(){
+function getjoke() {
   url = "/getjoke";
   var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function () {
+  xhr.onreadystatechange = function() {
     if (xhr.status === 200) {
       var response = (xhr.responseText);
       document.getElementById("rjoke").innerHTML = response;
@@ -28,4 +28,4 @@ function getjoke(){
   };
   xhr.open('POST', url);
   xhr.send();
-  }
+}
