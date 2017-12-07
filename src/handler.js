@@ -39,7 +39,7 @@ const handler = (request, response) => {
 
 const getRandomJoke = (request, response) => req('https://icanhazdadjoke.com/slack', (error, apiResponse) => {
   if (error) {
-    console.log('Error:', error);
+    throw (error);
   } else {
     const jokeJSON = JSON.parse(apiResponse.body);
     const joke = jokeJSON.attachments[0].text;

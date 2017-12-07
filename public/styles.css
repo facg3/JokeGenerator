@@ -140,6 +140,8 @@ div {
 }
 
 .quote-box {
+  opacity: 0.6;
+  background-color: #3e87ec;
   border-radius:50%;
   position:relative;
   margin:8% auto auto auto;
